@@ -20,8 +20,7 @@ func main() {
 	fmt.Println("Enter a string:")
 	// Read all the input until a new line and store it in input
 	input, _ = reader.ReadString('\n')
-	// Remove all the spaces from the input
-	input = cleanUpInput(input)
+	input = strings.ToLower(strings.TrimSpace(input))
 
 	found := true
 	// Check if the input starts with i
@@ -36,14 +35,6 @@ func main() {
 	} else {
 		fmt.Println("Not Found!")
 	}
-}
-
-func cleanUpInput(input string) string {
-	input = strings.TrimRight(input, "\n")
-	input = strings.Replace(input, " ", "", -1)
-	input = strings.TrimSpace(input)
-	input = strings.ToLower(input)
-	return input
 }
 
 // Examples: The program should print “Found!”
